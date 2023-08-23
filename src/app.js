@@ -9,3 +9,10 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Runnning Express Server on port - ${port}`)
 })
+
+const myRoutes = require('./routes/recipeRoutes')
+
+app.use(express.json())
+
+app.use('/', myRoutes);
+
